@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Gauss-Jacobi</title>
+
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="style.css"class="defaultTextBox">
+	<script type="text/javascript">
+var x1,x2,x3,x
+var y1,y2,y3,y
+var z1,z2,z3,z
+var d1,d2,d3,d
+var X,Y,Z,i,max=8;
+
+function set()
+{
+  max=prompt("Enter number of iterations:");
+}
+
+function getvalue()
+
+
+{
+var x1=document.querySelector("#x1").value;
+var y1=document.querySelector("#y1").value;
+var z1=document.querySelector("#z1").value;
+var d1=document.querySelector("#d1").value;
+var x2=document.querySelector("#x2").value;
+var y2=document.querySelector("#y2").value;
+var z2=document.querySelector("#z2").value;
+var d2=document.querySelector("#d2").value;
+var x3=document.querySelector("#x3").value;
+var y3=document.querySelector("#y3").value;
+var z3=document.querySelector("#z3").value;
+var d3=document.querySelector("#d3").value;
+var x_p=0;var y_p=0;var z_p=0;i=0;
+
+var div=document.getElementById("display")
+div.innerHTML="";
+x=0;y=0;z=0;
+
+
+while(i<max)
+{
+i++;
+X=(d1-(y1*y)-(z1*z))/x1;
+Y=(d2-(x2*x)-(z2*z))/y2;
+Z=(d3-(y3*y)-(x3*x))/z3;
+div.innerHTML+="     X"+i+"= "+X+"     Y"+i+"= "+Y+"     Z"+i+"= "+Z+"<br><hr>";
+x=X;y=Y;z=Z;
+
+}
+}
+	</script>
+</head>
+
+
+
+
+<body>
+
+<div class="container"
+<form style="position:absolute;font-family: helvetica;top: 35px; left: 45px;">
+	x1=<input class="defaultTextBox"id="x1" type="text" size="3"> y1=<input class="defaultTextBox"type="text" id="y1" size="3"> z1= <input class="defaultTextBox" type="text" id="z1" size="3"> d1=<input class="defaultTextBox" type="text" id="d1"name="" size="3">
+	<br><br>
+	x2=<input class="defaultTextBox"id="x2" type="text" size="3"> y2=<input class="defaultTextBox" type="text" id="y2" size="3"> z2= <input class="defaultTextBox"type="text" id="z2" size="3"> d2=<input class="defaultTextBox"type="text" id="d2"name="" size="3">
+	<br><br>
+	x3=<input class="defaultTextBox"id="x3" type="text" size="3"> y3=<input class="defaultTextBox"type="text" id="y3" size="3"> z3= <input class="defaultTextBox"type="text" id="z3" size="3"> d3=<input class="defaultTextBox"type="text" id="d3"name="" size="3">
+	<br><br>
+	
+	
+	<input type="button" class="btn btn-info btn-lg" id="calc" onclick="getvalue()" value="Calculate" >
+    <input style="margin-left: 12px" type="button" class="btn btn-info btn-lg" id="set" onclick="set()" value="Set Iterations" >
+</form>
+<br><br>
+<div class="alert alert-success">
+  Enter coefficients of the equations in the corresponding boxes.
+</div>
+<div class="alert alert-info">
+  <strong><a href="#set">Set Iterations</a></strong> to set the numbr of iterations.
+</div>
+
+<div id="display" class="container"> </div>
+</body>
+</html>

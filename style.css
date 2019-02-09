@@ -1,0 +1,16 @@
+.defaultTextBox {
+    padding: 0;
+    height: 30px;
+    position: relative;
+    left: 0;
+    outline: none;
+    border: 2px solid #cdcdcd;
+    border-color: rgba(200,60,100,0.5);
+    background-color: white;
+    font-size: 16px;
+}
+#display
+{
+	font-weight: bold;
+	font-style: oblique;
+}
